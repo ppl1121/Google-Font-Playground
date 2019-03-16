@@ -1,0 +1,17 @@
+.PanelUnit {
+    width: 30%;
+    height: 200px;
+    margin: 10px auto;
+    
+    box-sizing: border-box;
+
+}
+
+
+
+.TextArea {   
+    width: 100%;
+    height: 80%;
+    resize: none;
+    box-sizing: border-box;
+}

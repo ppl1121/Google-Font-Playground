@@ -1,0 +1,10 @@
+.TextColorController {
+    display: flex;
+    position: relative;
+}
+
+.ColorPicker {
+    width: 20px;
+    height: 20px;
+}
+

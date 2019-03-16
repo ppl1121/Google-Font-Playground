@@ -1,0 +1,7 @@
+.FontFamilyController {
+    display: flex
+}
+
+.FontFamilySelector {
+    width: 250px;
+}

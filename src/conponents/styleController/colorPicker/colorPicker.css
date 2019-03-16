@@ -1,0 +1,16 @@
+.ColorPicker {
+    height: 100%;
+    width: 100%;
+}
+
+.ColorPickerIcon {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+.SketchPicker {
+    position: absolute;
+    top: 21px;
+    left: 0px;
+}
