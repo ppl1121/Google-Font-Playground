@@ -29,7 +29,11 @@ class StyleController extends Component {
         //         this.setState({availableFontVariants: new_availableFontVariants});
         //     }  
         // }  
-
+       if(this.props.panelStyle.styleData.fontFamily === '' && this.props.panelStyle.styleData.fontVariant === ''){
+           if(this.state.availableFontVariants.length>0){
+            this.setState({availableFontVariants: []});
+           }
+       }
        const new_families = this.props.panelStyle.fontData.filter(font =>{
                                 if(this.props.panelStyle.styleData.fontCategory==='All'){
                                     return true;
@@ -118,18 +122,19 @@ class StyleController extends Component {
         const varientsOptions =  this.state.availableFontVariants.map(FontVarient => {return {value: FontVarient, label: FontVarient}});
         return (
             <div className={classes.StyleController}>
+
+                <FontCategoryController categoryValue={this.props.panelStyle.styleData.fontCategory}
+                                        categoryItems={this.state.availableFontCategory.sort((a,b)=>a.localeCompare(b))}
+                                        onChange={this.fontCategoryChangedHandler}/>
+                <FontFamilyController  value={familyOptions.filter(FontFamily => FontFamily.value===this.props.panelStyle.styleData.fontFamily)} 
+                                       options={familyOptions} onChange={this.fontFamilySelectedHandler}  />
+                <FontVariantsController value={varientsOptions.filter(FontVariants => FontVariants.value===this.props.panelStyle.styleData.fontVariant)} 
+                                        options={varientsOptions} onChange={this.fontVariantsSelectedHandler}  
+                                        isDisabled={this.state.availableFontVariants.length===0 ? true : false} />   
                 <FontSizeController fontSizeChangedHandler={this.fontSizeChangedHandler} sizeValue={this.props.panelStyle.styleData.fontSize} />
                 <TextColorController color={this.props.panelStyle.styleData.color} colorChangedHandler={this.colorChangedHandler} />
                 <BackgroundColorController color={this.props.panelStyle.styleData.backgroundColor} colorChangedHandler={this.backgroundColorChangedHandler} />
-                <FontCategoryController categoryValue={this.props.panelStyle.styleData.fontCategory} categoryItems={this.state.availableFontCategory} onChange={this.fontCategoryChangedHandler}/>
-                <FontFamilyController  value={familyOptions.filter(FontFamily => FontFamily.value===this.props.panelStyle.styleData.fontFamily)} 
-                                       options={familyOptions} onChange={this.fontFamilySelectedHandler}  />
-                {/* <FontVariantsController value={this.state.isFontVariantsDisplayClear ? '' : undefined} 
-                                        options={varientsOptions} onChange={this.fontVariantsSelectedHandler}  
-                                        isDisabled={this.state.availableFontVariants.length===0 ? true : false} /> */}
-                <FontVariantsController value={varientsOptions.filter(FontVariants => FontVariants.value===this.props.panelStyle.styleData.fontVariant)} 
-                                        options={varientsOptions} onChange={this.fontVariantsSelectedHandler}  
-                                        isDisabled={this.state.availableFontVariants.length===0 ? true : false} />                         
+                                      
             </div>
         );
     }

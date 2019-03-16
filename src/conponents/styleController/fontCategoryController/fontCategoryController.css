@@ -1,0 +1,23 @@
+.FontCategoryController {
+    margin-bottom: 20px;
+
+}
+
+.CategoryItems {
+    list-style: none;
+    padding-left: 0;
+    box-sizing: border-box;
+}
+
+.CategoryItem {
+    display: inline-block;
+    width: 40%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    margin-right: 20px;
+}
+
+.FontCategoryWrapper {
+    width: 80%;
+    margin: 0 0 0 auto;
+}

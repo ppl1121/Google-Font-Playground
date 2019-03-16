@@ -13,11 +13,19 @@ const panelUnit = (props) => {
 
     return ( 
         <div onClick={props.panelUnitChanged} className={classes.PanelUnit}>
-            <textarea style={styleData} type='textarea' className={classes.TextArea} />
-            <div>
-                <button onClick={props.addPanelUnit}>add</button>
-                <button onClick={()=> props.deletePanelUnit(props.panelId)}>close</button>
+            <div className={classes.PanelUnitFrame}>
+                <ul className={classes.PanelUnitHeader}>
+                    <li>{props.styleData.fontSize}</li>
+                    <li>{props.styleData.fontFamily==='' ? 'Oswald' : props.styleData.fontFamily}</li>
+                    <li>{props.styleData.fontVariant==='' ? 'Regular' : props.styleData.fontVariant}</li>
+                </ul>
+                <textarea style={styleData} type='textarea' className={classes.TextArea} />
+                <div>
+                    <button onClick={props.addPanelUnit}>add</button>
+                    {props.panelId!==0 ? <button onClick={()=> props.deletePanelUnit(props.panelId)}>close</button> : null }
+                </div>
             </div>
+            
         </div>       
             
 

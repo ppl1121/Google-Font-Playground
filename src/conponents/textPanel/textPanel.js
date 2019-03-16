@@ -22,9 +22,9 @@ class TextPanel extends Component {
                         a: '1',
                     },
                     backgroundColor: {
-                        r: '0',
-                        g: '0',
-                        b: '0',
+                        r: '255',
+                        g: '255',
+                        b: '255',
                         a: '1',
                     },
                 },             
@@ -43,9 +43,9 @@ class TextPanel extends Component {
                         a: '1',
                     },
                     backgroundColor: {
-                        r: '0',
-                        g: '0',
-                        b: '0',
+                        r: '255',
+                        g: '255',
+                        b: '255',
                         a: '1',
                     },
                 },
@@ -64,17 +64,20 @@ class TextPanel extends Component {
 
     componentDidUpdate () {
         const index = this.state.panelUnitStyleGroup.findIndex(unit => unit.panelId===this.props.panelStyle.panelId);
-        if(index>=0 && (this.props.panelStyle.styleData.fontSize !== this.state.panelUnitStyleGroup[index].styleData.fontSize ||
-                        this.props.panelStyle.styleData.color !== this.state.panelUnitStyleGroup[index].styleData.color ||
-                        this.props.panelStyle.styleData.backgroundColor !== this.state.panelUnitStyleGroup[index].styleData.backgroundColor) ||
-                        this.props.panelStyle.styleData.fontFamily !== this.state.panelUnitStyleGroup[index].styleData.fontFamily ||
-                        this.props.panelStyle.styleData.fontVariant !== this.state.panelUnitStyleGroup[index].styleData.fontVariant ) {
-            const newStyleData =  {...this.props.panelStyle.styleData};
-            const newPanelUnitStyleGroup = [...this.state.panelUnitStyleGroup];
-            const panelUnitIndex= newPanelUnitStyleGroup.findIndex(panelUnitStyle=> panelUnitStyle.panelId===this.props.panelStyle.panelId);
-            const newPanelUnitStyle = {...newPanelUnitStyleGroup[panelUnitIndex], styleData: newStyleData};
-            newPanelUnitStyleGroup[panelUnitIndex] = newPanelUnitStyle;
-            this.setState({panelUnitStyleGroup: newPanelUnitStyleGroup});
+        // console.log(index)
+        if(index>=0){
+            if(this.props.panelStyle.styleData.fontSize !== this.state.panelUnitStyleGroup[index].styleData.fontSize ||
+                this.props.panelStyle.styleData.color !== this.state.panelUnitStyleGroup[index].styleData.color ||
+                this.props.panelStyle.styleData.backgroundColor !== this.state.panelUnitStyleGroup[index].styleData.backgroundColor ||
+                this.props.panelStyle.styleData.fontFamily !== this.state.panelUnitStyleGroup[index].styleData.fontFamily ||
+                this.props.panelStyle.styleData.fontVariant !== this.state.panelUnitStyleGroup[index].styleData.fontVariant ) {
+                const newStyleData =  {...this.props.panelStyle.styleData};
+                const newPanelUnitStyleGroup = [...this.state.panelUnitStyleGroup];
+                const panelUnitIndex= newPanelUnitStyleGroup.findIndex(panelUnitStyle=> panelUnitStyle.panelId===this.props.panelStyle.panelId);
+                const newPanelUnitStyle = {...newPanelUnitStyleGroup[panelUnitIndex], styleData: newStyleData};
+                newPanelUnitStyleGroup[panelUnitIndex] = newPanelUnitStyle;
+                this.setState({panelUnitStyleGroup: newPanelUnitStyleGroup});
+        }  
         }  
     }
 
@@ -84,7 +87,7 @@ class TextPanel extends Component {
         const panelStyle = {
             panelId: panelUnitIndex,
             styleData: {
-                fontSize: 40,
+                fontSize: 10,
                 fontCategory: 'All',
                 fontFamily: '',
                 fontVariant: '',
@@ -121,7 +124,7 @@ class TextPanel extends Component {
 
     render() {
         const panelUnits = this.state.panelUnitStyleGroup.map(
-                panelUnitStyle => <PanelUnit key={panelUnitStyle.panelId}  deletePanelUnit={this.deletePanelUnit} addPanelUnit={this.addPanelUnit}    panelId={panelUnitStyle.panelId}   styleData={panelUnitStyle.styleData}  panelUnitChanged={() => this.panelUnitChangedHandler({...panelUnitStyle})} /> );
+                panelUnitStyle => <PanelUnit key={panelUnitStyle.panelId}  deletePanelUnit={()=> this.deletePanelUnit(panelUnitStyle.panelId)} addPanelUnit={this.addPanelUnit}    panelId={panelUnitStyle.panelId}   styleData={panelUnitStyle.styleData}  panelUnitChanged={() => this.panelUnitChangedHandler({...panelUnitStyle})} /> );
         return (
             <div  className={classes.Panel}>
                 {panelUnits}

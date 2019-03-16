@@ -1,9 +1,15 @@
 .ColorPicker {
     height: 100%;
     width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgb(173, 173, 165);
 }
 
 .ColorPickerIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
     background-color: white;

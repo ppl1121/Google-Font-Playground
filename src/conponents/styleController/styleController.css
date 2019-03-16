@@ -1,3 +1,10 @@
 .StyleController {
     width: 40%;
+    position: fixed;
+    height: 60%;
+    top: 20px;
+    right: 0px;
+    box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    padding: 10px;
 }

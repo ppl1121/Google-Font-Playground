@@ -4,7 +4,7 @@ import classes from './fontVariantsController.css'
 const fontVariantsController = (props) => {
     return (
         <div className={classes.FontVariantsController}>
-            <label>Font Variants</label>
+            <label className={classes.FontVariantsLabel}>Font Variants</label>
             <div className={classes.FontVariantsSelector}>
                 <Select value={props.value}  isDisabled={props.isDisabled} options={props.options} onChange={props.onChange} />
             </div>

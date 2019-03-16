@@ -4,7 +4,7 @@ import ColorPicker from '../colorPicker/colorPicker';
 
 const textColorController = (props) => (
     <div className={classes.TextColorController}>
-        <label>Text Color</label>
+        <label className={classes.TextColorLabel}>Text Color</label>
         <div className={classes.ColorPicker}>
             <ColorPicker color={props.color} colorChangedHandler= {props.colorChangedHandler} />
         </div>

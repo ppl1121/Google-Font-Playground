@@ -1,7 +1,13 @@
 .FontVariantsController {
-    display: flex
+    display: flex;
+    margin-bottom: 20px;
 }
 
 .FontVariantsSelector {
     width: 250px;
+    margin-left: 10px;
+}
+
+.FontVariantsLabel {
+    width: 120px;
 }
