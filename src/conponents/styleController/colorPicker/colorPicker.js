@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {SketchPicker} from 'react-color'
 import clickOutside from 'react-click-outside';
+import ClickOutsidePPL from '../../../outsideClicker/outsideClicker';
 import classes from './colorPicker.css';
 class ColorPicker extends Component {
     
@@ -53,6 +54,7 @@ class ColorPicker extends Component {
         }
 
         return (
+            
             <div className={classes.ColorPicker}>
                 {PickerIcon}
                 
@@ -61,8 +63,10 @@ class ColorPicker extends Component {
                    {this.state.displayColorPicker ?  <SketchPicker color={this.props.color} onChange={ this.handleColorChange } /> : null} 
                 </div>
             </div>
+
         )
     }
 }
 
-export default clickOutside(ColorPicker);
+// export default clickOutside(ColorPicker);
+export default  ColorPicker;

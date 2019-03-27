@@ -10,5 +10,8 @@
 }
 
 .FontFamilyLabel {
-    width: 120px;
+    width: 140px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
 }

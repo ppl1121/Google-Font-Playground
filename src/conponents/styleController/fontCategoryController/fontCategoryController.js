@@ -12,7 +12,7 @@ const fontCategoryController = (props) => {
 
     return (
         <div className={classes.FontCategoryController}>
-            <label>Font Category</label>
+            <label className={classes.Lable} >Font Category</label>
             <div className={classes.FontCategoryWrapper}>
                 <ul className={classes.CategoryItems}>
                     {categoryItems}

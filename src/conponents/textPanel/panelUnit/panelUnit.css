@@ -17,15 +17,38 @@
     height: 80%;
     resize: none;
     box-sizing: border-box;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
 }
 
 .PanelUnitHeader {
     padding: 0;
     margin: 0;
     list-style: none;
+    text-transform: capitalize;
+    color: rgba(110, 110, 60, 0.5);
 }
 
 .PanelUnitHeader li {
     display: inline-block;
     margin-right: 15px
 }
+
+.Add_Button {
+    background-color: #f1c40f;
+    font-size: 14px;
+    padding: 5px 8px;
+    font-weight: bold;
+}
+
+.Delete_Button {
+    background-color: #f1c40f;
+    font-size: 14px;
+    padding: 5px 8px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+

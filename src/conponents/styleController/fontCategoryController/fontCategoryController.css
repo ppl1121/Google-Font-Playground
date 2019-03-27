@@ -1,6 +1,13 @@
 .FontCategoryController {
     margin-bottom: 20px;
+    
 
+}
+
+.Lable {
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
 }
 
 .CategoryItems {

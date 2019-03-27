@@ -7,10 +7,22 @@
 .FontSizeInput {
     margin-left: 10px;
     display: inline-block;
-    height: 20px;
+    height: 25px;
     width: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.5) ;
+    border-radius: 4px;
+    outline: none;
+}
+
+
+.FontSizeInput:focus {
+    border: 1px solid #ffe000;
 }
 
 .FontSizeLabel {
-    width: 120px;
+    width: 140px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
 }
+
